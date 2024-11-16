@@ -1,0 +1,14 @@
+<style>
+        .bg-dark {
+            background-color: #386641!important;
+        }
+        .container img{
+            margin-right: 20px;
+        }
+        .container{
+          color: black;
+        }
+        .nav-link{
+          color: red;
+        }
+    </style>
