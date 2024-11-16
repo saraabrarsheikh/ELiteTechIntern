@@ -1,0 +1,790 @@
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+.container {
+  position: relative;
+  width: 100%;
+}
+
+.image {
+  opacity: 1;
+  display: block;
+  width: 100%;
+  height: auto;
+  transition: .5s ease;
+  backface-visibility: hidden;
+}
+
+.middle {
+  transition: .5s ease;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.container:hover .image {
+  opacity: 0.3;
+}
+
+.container:hover .middle {
+  opacity: 1;
+}
+
+.text {
+  background-color: #04AA6D;
+  color: white;
+  font-size: 16px;
+  padding: 16px 32px;
+}
+</style>
+<style>
+        *{
+            padding: 0;
+            margin: 0;
+            text-decoration: none;
+            list-style: none;
+            box-sizing:border-box;
+        }
+        body{
+            font-family: montserrat;
+        }
+        nav{
+            background-color: #AA5500 ;
+            background-repeat: no-repeat;
+            height: 200px;
+            width: 100%;
+        }
+        label.logo{
+            color: black;
+            font-size: 100px;
+            line-height: 190px;
+            padding: 0 100px;
+            font-weight: bold;
+        }
+        nav ul{
+            float: right;
+            margin-right: 20px;
+        }
+        nav ul li{
+            display: inline-block;
+            line-height: 170px;
+            margin: 0 5px;
+        }
+        nav ul li a{
+            color: black;
+            font-size: 19px;
+            padding: 7px 13px;
+            border-radius: 3px;
+            text-transform: uppercase;
+        }
+        a.active,a:hover{
+            background:rgb(255, 175, 0);
+            transition: .5s;
+        }
+        .checkbtn{
+            font-size: 30px;
+            color: black;
+            float: right;
+            line-height: 80px;
+            margin-right: 40px;
+            cursor: pointer;
+            display: none;
+        }
+        #check{
+            display: none;
+        }
+        @media(max:width:952px){
+            label.logo{
+                font-size: 30px;
+                padding-left: 50px;
+            }
+            nav ul li a{
+                font-size: 16px;
+            }
+        }
+        @media(max:width:858px){
+            .checkbtn{
+                display: block;
+            }
+            ul{
+                position: fixed;
+                width: 100%;
+                height: 100vh;
+                top: 80px;
+                left: -100%;
+                text-align: center;
+                transition: all .5s;
+            }
+            nav ul li{
+                display: block;
+                margin: 50px 0;
+                line-height: ;
+            }
+            nav ul li a{
+                font-size: 20px;
+            }
+            a:hover,a.active{
+                background: none;
+                color: red;
+            }
+            #check:checked ~ ul{
+                left: 0;
+            }
+        }
+        
+    </style>
+    <style>
+body {
+  font-family: 'Lato', sans-serif;
+  align-items: left;
+}
+
+.overlay {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: rgb(0,0,0);
+  background-color: rgba(0,0,0, 0.9);
+  overflow-x: hidden;
+  transition: 0.5s;
+}
+
+.overlay-content {
+  position: relative;
+  top: 25%;
+  width: 100%;
+  text-align: center;
+  margin-top: 30px;
+}
+
+.overlay a {
+  padding: 8px;
+  text-decoration: none;
+  font-size: 36px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.overlay a:hover, .overlay a:focus {
+  color: #f1f1f1;
+}
+
+.overlay .closebtn {
+  position: absolute;
+  top: 20px;
+  right: 45px;
+  font-size: 60px;
+}
+
+@media screen and (max-height: 450px) {
+  .overlay a {font-size: 10px}
+  .overlay .closebtn {
+  font-size: 40px;
+  top: 15px;
+  right: 35px;
+  }
+}
+</style>
+<style>
+.pagination a {
+  color: black;
+  float: revert-layer;
+  padding: 10px 30px;
+  text-decoration: none;
+  transition: background-color .3s;
+  align-items: center;
+  height: 40px;
+}
+
+.pagination a.active {
+  background-color: dodgerblue;
+  color: white;
+}
+
+.pagination a:hover:not(.active) {background-color: #ddd;}
+.div{
+  height: 40px;
+  width: 100%;
+  align-items: center;
+}
+</style>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body {margin:0;height:2000px;}
+
+.icon-bar {
+  position: fixed;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+.icon-bar a {
+  display: block;
+  text-align: center;
+  padding: 16px;
+  transition: all 0.3s ease;
+  color: white;
+  font-size: 20px;
+}
+
+.icon-bar a:hover {
+  background-color: #000;
+}
+
+.facebook {
+  background: #3B5998;
+  color: white;
+}
+
+.twitter {
+  background: #55ACEE;
+  color: white;
+}
+
+.google {
+  background: #dd4b39;
+  color: white;
+}
+
+.linkedin {
+  background: #007bb5;
+  color: white;
+}
+
+.youtube {
+  background: #bb0000;
+  color: white;
+}
+
+.content {
+  margin-left: 75px;
+  font-size: 60px;
+}
+</style>
+<style>
+.container1 {
+  border: 2px solid #ccc;
+  background-color: #eee;
+  border-radius: 5px;
+  padding: 16px;
+  margin: 16px 0;
+  align-items: right;
+}
+
+.container1::after {
+  content: "";
+  clear: both;
+  display: table;
+    align-items: right;
+
+}
+
+.container1 img {
+  float: right;
+  margin-right: 20px;
+  border-radius: 1%;
+}
+
+.container1 span {
+  font-size: 20px;
+  margin-left:15px;
+}
+
+@media (max-width: 500px) {
+  .container1 {
+      text-align: center;
+  }
+  .container1 img {
+      margin: auto;
+      float: none;
+      display: block;
+  }
+}
+</style>
+<style type="text/css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">  
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">  
+</head>  
+<style>  
+html {  
+  position: relative;  
+  min-height: 100%;  
+  body {  
+    margin-bottom: 60px;   
+    .footer {  
+      position: absolute;  
+      bottom: 0;  
+      width: 100%;  
+      height: 60px;   
+      background-color: rgba(0,0,0,0.3);  
+    }  
+  }  
+}  
+body {  
+  background-color:#563d7c;  
+  color:black;  
+  >.container {  
+    padding: 60px 15px 0;  
+  }  
+  .footer {  
+    .container {  
+      padding-right: 15px;  
+      padding-left: 15px;  
+      .text-muted {  
+        margin: 20px 0;  
+        color: rgba(255,255,255,0.5);  
+      }  
+    }  
+  }  
+}  
+.navbar-logo {  
+  padding: 0px; /* firefox bug fix */  
+}  
+.navbar-logo>img {  
+  height: 100%;  
+  padding: 15px; /* firefox bug fix */  
+  width: auto;  
+}  
+  
+ul {  
+    margin: 0px;  
+    padding: 0px;  
+}  
+.footer-section {  
+  background: #151414;  
+  position: relative;  
+}  
+.footer-cta {  
+  border-bottom: 1px solid #373636;  
+}  
+.single-cta i {  
+  color: #ff5e14;  
+  font-size: 30px;  
+  float: left;  
+  margin-top: 8px;  
+}  
+.cta-text {  
+  padding-left: 15px;  
+  display: inline-block;  
+}  
+.cta-text h4 {  
+  color: #fff;  
+  font-size: 20px;  
+  font-weight: 600;  
+  margin-bottom: 2px;  
+}  
+.cta-text span {  
+  color: #757575;  
+  font-size: 15px;  
+}  
+.footer-content {  
+  position: relative;  
+  z-index: 2;  
+}  
+.footer-pattern img {  
+  position: absolute;  
+  top: 0;  
+  left: 0;  
+  height: 330px;  
+  background-size: cover;  
+  background-position: 100% 100%;  
+}  
+.footer-logo {  
+  margin-bottom: 30px;  
+}  
+.footer-logo img {  
+    max-width: 200px;  
+}  
+.footer-text p {  
+  margin-bottom: 14px;  
+  font-size: 14px;  
+      color: #7e7e7e;  
+  line-height: 28px;  
+}  
+.footer-social-icon span {  
+  color: #fff;  
+  display: block;  
+  font-size: 20px;  
+  font-weight: 700;  
+  font-family: 'Poppins', sans-serif;  
+  margin-bottom: 20px;  
+}  
+.footer-social-icon a {  
+  color: #fff;  
+  font-size: 16px;  
+  margin-right: 15px;  
+}  
+.footer-social-icon i {  
+  height: 40px;  
+  width: 40px;  
+  text-align: center;  
+  line-height: 38px;  
+  border-radius: 50%;  
+}  
+.facebook-bg{  
+  background: #3B5998;  
+}  
+.twitter-bg{  
+  background: #55ACEE;  
+}  
+.google-bg{  
+  background: #DD4B39;  
+}  
+.footer-widget-heading h3 {  
+  color: #fff;  
+  font-size: 20px;  
+  font-weight: 600;  
+  margin-bottom: 40px;  
+  position: relative;  
+}  
+.footer-widget-heading h3::before {  
+  content: "";  
+  position: absolute;  
+  left: 0;  
+  bottom: -15px;  
+  height: 2px;  
+  width: 50px;  
+  background: #ff5e14;  
+}  
+.footer-widget ul li {  
+  display: inline-block;  
+  float: left;  
+  width: 50%;  
+  margin-bottom: 12px;  
+}  
+.footer-widget ul li a:hover{  
+  color: #ff5e14;  
+}  
+.footer-widget ul li a {  
+  color: #878787;  
+  text-transform: capitalize;  
+}  
+.subscribe-form {  
+  position: relative;  
+  overflow: hidden;  
+}  
+.subscribe-form input {  
+  width: 100%;  
+  padding: 14px 28px;  
+  background: #2E2E2E;  
+  border: 1px solid #2E2E2E;  
+  color: #fff;  
+}  
+.subscribe-form button {  
+    position: absolute;  
+    right: 0;  
+    background: #ff5e14;  
+    padding: 13px 20px;  
+    border: 1px solid #ff5e14;  
+    top: 0;  
+}  
+.subscribe-form button i {  
+  color: #fff;  
+  font-size: 22px;  
+  transform: rotate(-6deg);  
+}  
+.copyright-area{  
+  background: #202020;  
+  padding: 25px 0;  
+}  
+.copyright-text p {  
+  margin: 0;  
+  font-size: 14px;  
+  color: #878787;  
+}  
+.copyright-text p a{  
+  color: #ff5e14;  
+}  
+.footer-menu li {  
+  display: inline-block;  
+  margin-left: 20px;  
+}  
+.footer-menu li:hover a{  
+  color: #ff5e14;  
+}  
+.footer-menu li a {  
+  font-size: 14px;  
+  color: #878787;  
+}  
+</style>  
+</style>
+</head>
+<body>
+  
+  
+  <div class="icon-bar">
+  <a href="#" class="facebook"><i class="fa fa-facebook"></i></a> 
+  <a href="#" class="twitter"><i class="fa fa-twitter"></i></a> 
+  <a href="#" class="google"><i class="fa fa-google"></i></a> 
+  <a href="#" class="linkedin"><i class="fa fa-linkedin"></i></a>
+  <a href="#" class="youtube"><i class="fa fa-youtube"></i></a> 
+</div>
+  <div class="container">
+  <body style="background-color:rgb(254, 249, 231);">
+         <nav>
+        <input type="checkbox" id="check">
+        <label for="check" class="checkbtn">
+            <i class="bars"></i>
+        </label>
+ 
+        <label class="logo"><i style="color:transparent;">-------</i><i>Synergy Shades & Watches </i></label>
+
+        <ul>
+            
+
+            <li style="color: red;cursor: pointer;"><a><i class="fa fa-fw fa-home"></i></i>Home</a></li>
+            <li style="color: red;cursor: pointer;"><a><i class="fa fa-fw fa-search"></i>Search</a></li>
+            <li style="color: red;cursor: pointer;"><a><i class="fa fa-fw fa-user"></i>Reviews</a></li>
+             <li style="color: red;cursor: pointer;"><a>%Offers</a></li>
+            <li style="color: red;cursor: pointer;"><a><i class="fa fa-fw fa-envelope"></i>Support</a></li><div id="myNav" class="overlay">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <div class="overlay-content">
+    <a href="#">About</a>
+    <a href="#">Services</a>
+    <a href="#">Clients</a>
+    <a href="#">Contact</a>
+  </div>
+</div>
+<span style="font-size:25px;cursor:pointer" onclick="openNav()">&#9776; open</span>
+
+<script>
+function openNav() {
+  document.getElementById("myNav").style.width = "100%";
+}
+
+function closeNav() {
+  document.getElementById("myNav").style.width = "0%";
+}
+</script>
+        </ul>
+    </nav>
+
+
+  <img src="https://cdn.shopify.com/s/files/1/2402/7403/t/20/assets/mensunbanner-1657486577311.jpg?v=1657486579" alt="Avatar" class="image" style="width:100%">
+  <div class="middle">
+    <div class="text"><a href="file:///C:/Users/SARA%20ABRAR%20SHEIKH/OneDrive/Desktop/Sara%20Html/gayw.html"><h1><h2><b>
+
+Masculine</b></div>
+  </div>
+</div>
+<div class="container">
+  <img src="https://cdn.create.vista.com/downloads/e2f15fef-cb2f-4498-934f-7217c16676ae_1024.jpeg" alt="Avatar" class="image" style="width:100%">
+  <div class="middle">
+    <div class="text"><a href="file:///C:/Users/SARA%20ABRAR%20SHEIKH/OneDrive/Desktop/Sara%20Html/gayw1.html"><h1><h2><b>
+
+Feminine</b></div>
+  </div>
+</div>
+<div class="container">
+  <img src="https://www.oceanparadise.com.sg/cdn/shop/collections/KietlaT3_Jokala_PEACOCK-BLUE_BD-800x800_1438x426.jpg?v=1617184824" alt="Avatar" class="image" style="width:100%">
+  <div class="middle">
+    <div class="text"><a href="file:///C:/Users/SARA%20ABRAR%20SHEIKH/OneDrive/Desktop/Sara%20Html/gayw2.html"><h1><h2><b>
+
+Kids</b></div>
+  </div>
+</div>
+<div class="container">
+  <img src="https://knockaround.com/cdn/shop/files/collection-header-desktop_1x_1-1_d56248ad-c4c8-4b0b-ba84-abac215cc237.jpg?v=1702686450&width=1680" alt="Avatar" class="image" style="width:100%">
+  <div class="middle">
+    <div class="text"><a href="file:///C:/Users/SARA%20ABRAR%20SHEIKH/OneDrive/Desktop/Sara%20Html/gayw3.html"><h1><h2><b>
+
+Toddler</b></div>
+  </div>
+</div>
+  <body>
+
+    <h1 align="center" style="background-color:mediumspringgreen;"><h1><h2><b>
+
+ Introducing</b></h1>
+
+   <img style="width:100%" src="https://cdn.shopify.com/s/files/1/0249/3913/5054/files/3subdialsGIF_2048x2048.gif?v=1641900974"><
+   <div class="container">
+    <img src="https://www.sonatawatches.in/on/demandware.static/-/Sites-titan-master-catalog/default/dweedd8182/images/promotions/Sonata/bg/Sontata_53308_D.jpg" alt="Avatar" class="image" style="width:100%">
+    <div class="middle">
+    <div class="text"><a href="file:///C:/Users/SARA%20ABRAR%20SHEIKH/OneDrive/Desktop/Sara%20Html/gayw4.html"><h2><i>Analogue timepiece</i></h2></div>
+  </div>
+</div>
+  <div class="container">
+  <img src="https://seikowatches.co.in/cdn/shop/files/5-Sports-page-01_01_1024x1024.png?v=1682683485" alt="Avatar" class="image" style="width:100%">
+  <div class="middle">
+    <div class="text"><a href="file:///C:/Users/SARA%20ABRAR%20SHEIKH/OneDrive/Desktop/Sara%20Html/gayw5.html"><h2><i>Sports wear</i></h2></div>
+  </div>
+</div>
+<div class="container">
+  <img src="https://www.pebblecart.com/cdn/shop/files/Price_H.webp?v=1708414738&width=1920" alt="Avatar" class="image" style="width:100%">
+  <div class="middle">
+    <div class="text"><a href="file:///C:/Users/SARA%20ABRAR%20SHEIKH/OneDrive/Desktop/Sara%20Html/gayw6.html"><h2><i>Smartwatches for HER</i></h2></div>
+  </div>
+</div>
+<div class="container">
+  <img src="https://www.boultaudio.com/cdn/shop/articles/PARTY_1100x.jpg?v=1676465227" alt="Avatar" class="image" style="width:100%">
+  <div class="middle">
+    <div class="text"><a href="file:///C:/Users/SARA%20ABRAR%20SHEIKH/OneDrive/Desktop/Sara%20Html/gayw7.html"><h2><i>Smartwatches for HIM</i></h2></div>
+  </div>
+</div>
+
+</body>
+<h1 align="center" style="background-color:aquamarine;"> Testimonials</h1>
+
+
+<div class="container1">
+  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS71Q4oSAZnP4yOCRmqxfvVLbnq6Ug5E_jcig&usqp=CAU" alt="Avatar" style="width:90px">
+  <p align="center" style="color:red;"><span>Christina Fox</span> (CEO at Mighty Schools)</p>
+ &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span style='font-size:40px;'>&#9733;&#9733;&#9733;&#9733; &#9733;</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+  <p align="center">Synergy is the best.Nice quality and even looks are very good. I found it value for money and they are even much durable</p>
+</div>
+
+<div class="container1">
+  <img src="https://images.squarespace-cdn.com/content/v1/53cf0f45e4b0b1c1fde09403/8a9857fb-dcb2-40d2-ba95-016f10d0bb44/LinkedIn+headshot" alt="Avatar" style="width:90px">
+  <p align="center" style="color:black;"><span>Rebecca Flex</span> (CEO at Company)</p>
+  &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span style='font-size:40px;'>&#9733;&#9733;&#9733;&#9733; &#9733;</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+  <p align="center">Worth the price.Had good feelings and service by.sucetra jn.branch Senior persons Dr MV Rao , Prasad and Ns Deepika are very.polite and humble.</p>
+</div>
+<div class="container1">
+  <img src="https://nadiazheng.com/wp-content/uploads/2015/12/Montreal-personal-branding-linkedin-profile-professional-headshot-by-nadia-zheng-800x1000.jpg" alt="Avatar" style="width:90px">
+  <p align="center" style="color:blueviolet;"><span>Zoe Cheng</span> (Web designer)</p>
+ &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span style='font-size:40px;'>&#9733;&#9733;&#9733;&#9733; &#9733;</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+  <p align="center">My all time favourite.I tried synergy sunglass that one I bought from qatar. I like the style fashion and also the quality of products. No words to explain the finishing of product. Worthy.</p>
+</div>
+
+<div class="container1">
+  <img src="https://media.licdn.com/dms/image/C4D03AQGG2DAgKIlmZw/profile-displayphoto-shrink_800_800/0/1643886097009?e=2147483647&v=beta&t=beM4w2lw8FdcDhsna2WW9Za0wcLI0J2VzQIPqLB4wsY" alt="Avatar" style="width:90px">
+  <p align="center" style="color:forestgreen;"><span>Nikhil Soni</span> (Engineer)</p>
+  &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span style='font-size:40px;'>&#9733;&#9733;&#9733;&#9733; &#9733;</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+  <p align="center">Looking like a boss.Great place for frames and lenses. And especially staff are very polite???? and there explained action is very good!</p>
+</div>
+<body>  
+    <h1 align="center" style="background-color: orange;">SYNERGY Shades & Watches</h1>
+    <footer class="footer-section">  
+        <div class="container">  
+            <div class="footer-cta pt-5 pb-5">  
+                <div class="row">  
+                    <div class="col-xl-4 col-md-4 mb-30">  
+                        <div class="single-cta">  
+                             
+                            <div class="cta-text">  
+                                <h4 align="center"> Find us </h4>  
+                                <span style="align-content: center;"> Borgaon,Nagpur <span>  
+                            </div>  
+                        </div>  
+                    </div>  
+                    <div class="col-xl-4 col-md-4 mb-30">  
+                        <div class="single-cta">  
+                            
+                            <div class="cta-text">  
+                                <h4 align="center"> Call us </h4>  
+                                <span style="align-content:center;"> 9876543210 </span>  
+                            </div>  
+                        </div>  
+                    </div>  
+                    <div class="col-xl-4 col-md-4 mb-30">  
+                        <div class="single-cta">  
+                            <div class="cta-text">  
+                                <h4 align="center"> Mail us </h4>  
+                                <span style="align-content:center;"> synergyshadesandwatches@gmail.com </span> 
+                            </div>  
+                        </div>  
+                    </div>  
+                </div>  
+            </div>  
+           
+                            <div class="footer-social-icon">  
+                                <span style="align-content:center;"> Follow us </span>  
+                                <a href="#" class="facebook"><i class="fa fa-facebook"></i></a> 
+  <a href="#" class="twitter"><i class="fa fa-twitter"></i></a> 
+  <a href="#" class="google"><i class="fa fa-google"></i></a> 
+  <a href="#" class="linkedin"><i class="fa fa-linkedin"></i></a>
+  <a href="#" class="youtube"><i class="fa fa-youtube"></i></a> 
+                            </div>  
+                        </div>  
+                    </div>  
+                    <div class="col-xl-4 col-lg-4 col-md-6 mb-30">  
+                        <div class="footer-widget">  
+                            <div class="footer-widget-heading">  
+                                <h3 align="center"> Useful Links </h3>  
+                            </div>  
+                            <ul>  
+                                <li style="align-content:center" >
+ <a href="#"> Home </a> </li>  
+                                <li style="align-content:center" >
+ <a href="#"> about </a> </li>  
+                                <li style="align-content:center" >
+ <a href="#"> services</a> </li>  
+                                <li style="align-content:center" >
+ <a href="#"> portfolio</a> </li>  
+                                <li style="align-content:center" >
+ <a href="#"> Contact</a> </li>  
+                                <li style="align-content:center" >
+ <a href="#"> About us</a> </li>  
+                                <li style="align-content:center" >
+ <a href="#"> Our Services</a> </li>  
+                                <li style="align-content:center" >
+ <a href="#"> Expert Team</a> </li>  
+                                <li style="align-content:center" >
+ <a href="#"> Contact us</a> </li>  
+                                <li style="align-content:center" >
+ <a href="#"> Latest News</a> </li>  
+                            </ul>  
+                        </div>  
+                    </div>  
+                    <div class="col-xl-4 col-lg-4 col-md-6 mb-50">  
+                        <div class="footer-widget">  
+                            <div class="footer-widget-heading">  
+                                <h3 align="center"> Subscribe </h3>  
+                            </div>  
+                            <div class="footer-text mb-25">  
+                                <p align="center"> Don't miss to subscribe to our new feeds, kindly fill the form below. </p>  
+                            </div>  
+                            <div class="subscribe-form">  
+                                <form action="#">  
+                                    <input type="text" placeholder="Email Address">  
+                                    <button> <i class="fab fa-telegram-plane"> </i> </button>  
+                                </form>  
+                            </div>  
+                        </div>  
+                    </div>  
+                </div>  
+            </div>  
+        </div>  
+        <div class="copyright-area">  
+            <div class="container">  
+                <div class="row">  
+                    <div class="col-xl-6 col-lg-6 text-center text-lg-left">  
+                        <div class="copyright-text">  
+                            <p align="center"> Copyright © 2024, All Right Reserved </p>  
+                        </div>  
+                    </div>  
+                    <div class="col-xl-6 col-lg-6 d-none d-lg-block text-right">  
+                        <div class="footer-menu">  
+                            <ul>  
+                                <li style="align-content:center" >
+ <a href="#"> Home </a> </li>  
+                                <li style="align-content:center" >
+ <a href="#"> Terms </a> </li>  
+                                <li style="align-content:center" >
+ <a href="#"> Privacy </a> </li>  
+                                <li style="align-content:center" >
+ <a href="#"> Policy </a> </li>  
+                                <li style="align-content:center" >
+ <a href="#"> Contact </a> </li>  
+                            </ul>  
+                        </div>  
+                    </div>  
+                </div>  
+            </div>  
+        </div>  
+    </footer>  
+</body>
+
+</html>
